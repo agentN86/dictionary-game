@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="./style.css" rel="stylesheet">
+    <link href="./icon.ico" rel="icon">
+    <title>Dictionary Game</title>
+</head>
+<body oncontextmenu="return false;" align="middle">
+    <h1>Dictionary Game</h1>
+    <div>
+        <h2>hello</h2>
+    </div>
+    <table>
+		<tr>
+			<th>
+				<p><b>Controls:</b></p>
+			</th>
+            <th>
+                <p><b>High Score:</b></p>
+            </th>
+            <th>
+                <p><b>How to Play:</b></p>
+            </th>
+		</tr>
+		<tr>
+			<th>
+				<button onclick="document.getElementById('controls').showModal()">Show Controls</button>
+			</th>
+            <th>
+                <span id="highscore">N/A</span>
+            </th>
+            <th>
+                <button onclick="document.getElementById('howtoplay').showModal()">Show How to Play</button>
+            </th>
+		</tr>
+	</table>
+    <dialog id="controls">
+        <h3>Controls</h3>
+        To move the block left, use <b>the left arrow.</b> When trying to move right, use the<br>
+        <b>right arrow.</b> If your trying to make the block go down (to speed up the process),<br>
+        be sure to use the <b>down arrow.</b> Don't worry if a game is too long, once your fine<br>
+        with your score, just click the <b>End Game button</b> or <b>Pause & End Game button.</b>
+        <br><br>
+        <button onclick="document.getElementById('controls').close()">Close</button>
+    </dialog>
+    <dialog id="howtoplay">
+        <h3>How to Play</h3>
+        Get as much points (or your score) as possible. You must stack randomized blocks and try<br>
+        not to get the blocks all the way to the top of the game board. When you get a complete<br>
+        line, you will get points and the line will be deleted. Continue this until you lose. At<br>
+        the bottom, you will see a "High Score". You can try to reach as much as possible.<br>
+        The "next" shows what blocks comes next.
+        <br><br>
+        It is recommended to close the "Games" tab at the bottom of the page to refrain scrolling<br>
+        to the bottom while using the down arrow. All you need to do is click the "Games" and it<br>
+        should close. You can reopen it by clicking it again.
+        <br><br>
+        <button onclick="document.getElementById('howtoplay').close()">Close</button>
+    </dialog>
+    <dialog id="pause">
+        <h3>Paused</h3>
+        The game has been paused for your pleasure until you press the following button:
+        <br><br>
+        <button onclick="unpause()">Unpause</button>
+    </dialog>
+    <br><br>
+    <table class="gamesTable">
+        <caption><button id="gamesBTN" style="width: 100%; cursor: pointer; background-color: transparent; border: 0;">GAMES</button></caption>
+        <thead>
+            <tr class="gamesTableTH" class="gamesTableHide" style="display: table-row;" align="middle">
+                <th><a href="https://agentn86.github.io/js-minesweeper">Minesweeper</a></th>
+                <th><a href="https://agentn86.github.io/one-second-game">One Second Game</a></th>
+            </tr>
+            <tr class="gamesTableTH shader" align="middle">
+                <th><a href="https://agentn86.github.io/tetris-html">Tetris</a></th>
+                <th><a href="https://agentn86.github.io/dictionary-game">Dictionary Game</a></th>
+            </tr>
+        </thead>
+    </table>
+    <script src="./script.js"></script>
+</body>
+</html>
