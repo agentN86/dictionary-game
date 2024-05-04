@@ -16,12 +16,52 @@ var dictionary = {
 }
 
 var lives = 6
+var gooberlose = true
 
 var word = words[Math.floor(Math.random()*words.length)]
 document.getElementById('word').innerText = word
 document.getElementById('definition').innerText = dictionary[word].definition
 
+function begin() {
+	document.getElementById('start').style.display = "none"
+	document.getElementById('gameplay').style.display = "block"
+}
+
 function loseHeart() {
+	if (lives == 1 && gooberlose == true) {
+		document.body.innerHTML = `
+		<style>
+		body {
+		  margin: 0;
+		  overflow: hidden;
+		}
+		
+		video {
+		  width: 100%;
+		  height: 100vh;
+		  object-fit: cover;
+		}
+	  </style>
+	  <audio autoplay><source type="audio/mp3" src="./assets/glass_break.mp3"></audio>
+	  <video autoplay>
+		<source src="./assets/gameover.mp4" type="video/mp4">
+	  </video>
+		`
+
+		setTimeout(function() {
+			document.body.innerHTML = `
+				<style>
+					body {
+						background-color: black;
+						color: white;
+						transition: 1s;
+					}
+				</style>
+				<h1>your dead :(</h1>
+				<button onclick="location.reload()">let me try again!</button>
+			`
+		}, 4000)
+	}
 	document.getElementById('heart' + lives).src = "./assets/heartdead.png"
 	lives--
 

@@ -9,7 +9,28 @@
 </head>
 <body oncontextmenu="return false;" align="middle">
     <h1>Dictionary Game</h1>
-    <div>
+    <div id="start">
+        <h2>Setup</h2>
+        <h3>Difficulty:</h3>
+        <form>
+        <input type="radio" id="easyD" name="difficulty" value="Easy">
+        <label for="html">Easy Mode</label><br>
+        <input type="radio" id="mediumD" name="difficulty" value="Medium">
+        <label for="html">Medium Mode</label><br>
+        <input type="radio" id="hardD" name="difficulty" value="Hard">
+        <label for="html">Hard Mode</label><br>
+        </form>
+        <h3>Game Over Theme:</h3>
+        <form>
+            <input type="radio" id="normalT" name="gameover" value="Normal">
+            <label for="html">Normal Theme</label><br>
+            <input type="radio" id="gooberT" name="gameover" value="Goober">
+            <label for="html">Goober Theme</label><br>
+        </form>
+        <br>
+        <button onclick="begin()">Let's Begin!</button>
+    </div>
+    <div id="gameplay" style="display: none;">
         <img src="./assets/heart.png" id="heart1">
         <img src="./assets/heart.png" id="heart2">
         <img src="./assets/heart.png" id="heart3">
